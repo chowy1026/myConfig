@@ -1,0 +1,10 @@
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+
+# function to turn off the above requirement in case of upgrading 
+# and installinga global package,
+# example: `gpip install --upgrade pip setuptools wheel virtualenv` 
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
